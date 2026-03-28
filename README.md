@@ -103,6 +103,23 @@ python3 utpc.py cluster utpc_certs.bin --min-size 3
 # Decode a hex certificate
 python3 utpc.py decode 0000000000000060000000000000002002000000000000001105 00
 ```
+```
+python3 utpc.py verify --check-untouchable 146 72 2 37 9 1
+Building sieve to 438 for untouchability check...
+
+UTPC(n=146, phi=72, mu=2, J=37, dr=9, sg=1)
+  hex: 000000000000009200000000000000480200000000000000250901
+  status: VALID
+
+  [1+2] phi correct       ✓  (totient(n) == phi)
+  [ 3 ] dr correct        ✓  (digital_root(phi) == dr)
+  [ 4 ] mu correct        ✓  (mu consistent with dr)
+  [ 5 ] divisibility      ✓  (phi % mu == 0)
+  [ 6 ] J formula         ✓  (phi//mu + 1 == J)
+  [ 7 ] J prime           ✓  (Miller-Rabin on J)
+  [ 8 ] n untouchable     ✓  (verified)
+  [ 9 ] SG flag           ✓  (2J-1 prime check matches sg flag)
+```
 
 ### Python API
 
