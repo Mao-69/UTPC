@@ -120,6 +120,13 @@ UTPC(n=146, phi=72, mu=2, J=37, dr=9, sg=1)
   [ 8 ] n untouchable     ✓  (verified)
   [ 9 ] SG flag           ✓  (2J-1 prime check matches sg flag)
 ```
+```
+python3 ./utpc.py decode 000000000000009200000000000000480200000000000000250901
+UTPC(n=146, phi=72, mu=2, J=37, dr=9, sg=1)
+  2J-1 = 73
+  SG pair: True
+  Mod-9 blocked: False
+```
 
 ### Python API
 
