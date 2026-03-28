@@ -127,6 +127,35 @@ UTPC(n=146, phi=72, mu=2, J=37, dr=9, sg=1)
   SG pair: True
   Mod-9 blocked: False
 ```
+### Extract first certificate as hex (for inspection)
+```
+python3 -c '
+with open("utpc_certs.bin", "rb") as f:
+    data = f.read(27)
+    print(data.hex())
+'
+000000000000000500000000000000040400000000000000020401
+```
+### Use the Python API directly (cleanest for single generation):
+```
+from utpc import UTPC
+
+# Generate one certificate from an untouchable number
+cert = UTPC.from_n(96)
+print(cert)
+print("Hex (27 bytes):", cert.hex())
+
+# Another example
+cert2 = UTPC.from_n(146)
+print(cert2)
+print("Hex:", cert2.hex())
+```
+```
+UTPC(n=96, phi=32, mu=2, J=17, dr=5, sg=0)
+Hex (27 bytes): 000000000000006000000000000000200200000000000000110500
+UTPC(n=146, phi=72, mu=2, J=37, dr=9, sg=1)
+Hex: 000000000000009200000000000000480200000000000000250901
+```
 
 ### Python API
 
