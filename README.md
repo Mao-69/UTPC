@@ -178,7 +178,7 @@ clusters = analyze_clusters(certs, min_size=2)
 
 ---
 
-## Open problems
+## Open problems | future work
 
 1. Derive the SG enrichment constant (~1.83× asymptotic) analytically
 2. Prove cluster sizes are unbounded
